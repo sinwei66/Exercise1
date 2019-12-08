@@ -14,8 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnCalculate:Button = findViewById(R.id.buttonCalculate)
-
+        val btnReset:Button = findViewById(R.id.buttonReset)
         btnCalculate.setOnClickListener{calculate()}
+        btnReset.setOnClickListener{reset()}
     }
 
     private fun calculate()
@@ -38,5 +39,17 @@ class MainActivity : AppCompatActivity() {
 
         //val loan:TextView = findViewById(R.id.textViewLoan)
         //loan.setText("Loan: " + editTextCarPrice)
+    }
+
+    private fun reset()
+    {
+        editTextCarPrice.setText("")
+        editTextDownPayment.setText("")
+        editTextInterestRate.setText("")
+        editTextLoanPeriod.setText("")
+
+        textViewLoan.setText(R.string.loan)
+        textViewInterest.setText(R.string.interest)
+        textViewMonthlyRepayment.setText(R.string.monthly_repayment)
     }
 }
